@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
 from datetime import datetime
 
 app = Flask(__name__)
+
+app.secret_key = "maincrafts_internship_secret_key"
 
 DATABASE = "database.db"
 
@@ -66,6 +68,8 @@ def add_user():
 
     conn.commit()
     conn.close()
+    
+    flash("User added successfully!", "success")
 
     return redirect(url_for("index"))
 
@@ -82,6 +86,8 @@ def delete_user(user_id):
 
     conn.commit()
     conn.close()
+
+    flash("User deleted successfully!", "danger")
 
     return redirect(url_for("index"))
 
