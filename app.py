@@ -69,6 +69,22 @@ def add_user():
 
     return redirect(url_for("index"))
 
+@app.route("/delete_user/<int:user_id>")
+def delete_user(user_id):
+
+    conn = sqlite3.connect(DATABASE)
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "DELETE FROM users WHERE id = ?",
+        (user_id,)
+    )
+
+    conn.commit()
+    conn.close()
+
+    return redirect(url_for("index"))
+
 
 if __name__ == "__main__":
     init_db()

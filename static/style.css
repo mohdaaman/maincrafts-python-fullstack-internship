@@ -77,3 +77,16 @@ table th {
 tr:nth-child(even) {
     background-color: #f8fafc;
 }
+
+.delete-btn {
+    text-decoration: none;
+    background-color: #dc2626;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.delete-btn:hover {
+    background-color: #b91c1c;
+}
