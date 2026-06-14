@@ -22,6 +22,15 @@
             {% endif %}
         {% endwith %}
 
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h3>Total Users</h3>
+                <p>{{ total_users }}</p>
+            </div>
+
+        </div>
+
         <div class="form-section">
             <h2>Add New User</h2>
 
@@ -61,6 +70,20 @@
 
             </form>
         </div>
+
+        <form method="GET" class="search-form">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search by name, email or department"
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
 
         <div class="table-section">
 

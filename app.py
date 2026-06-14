@@ -34,13 +34,37 @@ def index():
     conn.row_factory = sqlite3.Row
 
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users ORDER BY id DESC")
+    search = request.args.get("search", "")
+
+    if search:
+        cursor.execute("""
+            SELECT * FROM users
+            WHERE name LIKE ?
+            OR email LIKE ?
+            OR department LIKE ?
+            ORDER BY id DESC
+        """, (
+            f"%{search}%",
+            f"%{search}%",
+            f"%{search}%"
+        ))
+    else:
+        cursor.execute(
+            "SELECT * FROM users ORDER BY id DESC"
+        )
 
     users = cursor.fetchall()
 
+    cursor.execute("SELECT COUNT(*) FROM users")
+    total_users = cursor.fetchone()[0]
+
     conn.close()
 
-    return render_template("index.html", users=users)
+    return render_template(
+        "index.html",
+        users=users,
+        total_users=total_users
+    )
 
 
 @app.route("/add_user", methods=["POST"])
