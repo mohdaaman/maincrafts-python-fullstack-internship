@@ -8,7 +8,6 @@ app.secret_key = "maincrafts_internship_secret_key"
 
 DATABASE = "database.db"
 
-
 def init_db():
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
@@ -173,7 +172,6 @@ def edit_user(user_id):
         "edit_user.html",
         user=user
     )
-
 
 if __name__ == "__main__":
     init_db()
