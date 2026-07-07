@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+{% include "navbar.html" %}
+
+<div class="container">
+
+    <div class="dashboard">
+
+        <h1>Student Management Dashboard</h1>
+
+        <p class="welcome">
+            Welcome, <strong>{{ user }}</strong> 👋
+        </p>
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h3>Total Students</h3>
+                <p>{{ total_students }}</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Courses</h3>
+                <p>{{ total_courses }}</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Latest Student</h3>
+
+                {% if latest_student %}
+                    <p>{{ latest_student.name }}</p>
+                {% else %}
+                    <p>No Records</p>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="action-buttons">
+
+            <a href="{{ url_for('add_student') }}"
+               class="btn blue">
+                ➕ Add Student
+            </a>
+
+            <a href="{{ url_for('students') }}"
+               class="btn green">
+                📋 View Students
+            </a>
+
+            <a href="{{ url_for('logout') }}"
+               class="btn red">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

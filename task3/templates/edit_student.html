@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Edit Student</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+{% include "navbar.html" %}
+
+<div class="container">
+
+<div class="form-box">
+
+<h1>Update Student Information</h1>
+
+<p class="page-description">
+    Modify the student details and save your changes.
+</p>
+
+<form method="POST">
+
+<input
+type="text"
+name="name"
+value="{{ student.name }}"
+required>
+
+<input
+type="email"
+name="email"
+value="{{ student.email }}"
+required>
+
+<input
+type="text"
+name="course"
+value="{{ student.course }}"
+required>
+
+<input
+type="number"
+name="semester"
+value="{{ student.semester }}"
+required>
+
+<button type="submit">
+
+Save Changes
+
+</button>
+
+</form>
+
+<p>
+
+<a href="{{ url_for('students') }}">
+
+← Back to Students
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
