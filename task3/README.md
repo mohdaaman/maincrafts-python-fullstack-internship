@@ -1,31 +1,48 @@
-# User Authentication System
+# Student Management System
 
-A Flask-based User Authentication System developed as part of the Maincrafts Technology Python Full Stack Web Development Internship (Task 2).
+A Flask-based Student Management System developed as part of **Task 3** of the Maincrafts Technology Python Full Stack Web Development Internship.
 
 ## Project Overview
 
-This project demonstrates the implementation of a secure authentication system using Flask, SQLite, and session management.
+This project extends the authentication system developed in Task 2 by integrating a complete database-driven CRUD module for authenticated users.
 
-The system allows users to:
-
-* Register new accounts
-* Login securely
-* Access protected dashboard routes
-* Logout safely
-
-Passwords are stored securely using hashing techniques.
+The application allows authorized users to securely manage student records through a clean and responsive web interface.
 
 ---
 
 ## Features
 
+### Authentication
+
 * User Registration
+* Secure Login
+* Logout
 * Password Hashing
-* User Login
 * Session Management
-* Protected Dashboard Access
-* Logout System
-* Flash Notifications
+* Protected Routes
+
+### Student Management
+
+* Add Student
+* View Students
+* Edit Student
+* Delete Student
+* Search Students
+
+### Dashboard
+
+* Total Students
+* Total Courses
+* Latest Student
+* Navigation Dashboard
+
+### User Experience
+
+* Flash Messages
+* Responsive Design
+* Reusable Navbar
+* Modern Dashboard
+* Professional Table Layout
 
 ---
 
@@ -51,45 +68,59 @@ Passwords are stored securely using hashing techniques.
 * Werkzeug Password Hashing
 * Flask Sessions
 
+### Development Tools
+
+* Visual Studio Code
+* Git
+* GitHub
+
 ---
 
 ## Project Structure
 
 ```text
-task-2/
+task-3/
+│
 ├── app.py
 ├── database.db
 ├── README.md
 ├── requirements.txt
+│
 ├── templates/
-│   ├── register.html
+│   ├── navbar.html
 │   ├── login.html
-│   └── dashboard.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── students.html
+│   ├── add_student.html
+│   └── edit_student.html
+│
 ├── static/
 │   └── style.css
+│
 └── screenshots/
 ```
 
 ---
 
-## Authentication Flow
+## Application Workflow
 
 1. User registers an account.
-2. Password is hashed before storing.
-3. User logs in using credentials.
-4. Flask verifies password hash.
-5. Session is created after successful login.
-6. Dashboard becomes accessible.
-7. Logout destroys the session.
+2. Password is securely hashed and stored.
+3. User logs in using valid credentials.
+4. A session is created after successful authentication.
+5. The user accesses the dashboard.
+6. Student records can be created, viewed, updated, searched, and deleted.
+7. Logout destroys the active session.
 
 ---
 
 ## Security Features
 
-* Password hashing
-* Session protection
-* Protected routes
-* Duplicate username prevention
+* Password Hashing
+* Session-Based Authentication
+* Protected Routes
+* Duplicate Username Validation
 
 ---
 
@@ -97,12 +128,14 @@ task-2/
 
 Through this project, I learned:
 
-* Flask Authentication
-* Password Hashing
-* Session Handling
-* Protected Routes
-* User Authentication Workflow
-* Secure Web Development Basics
+* Authentication using Flask Sessions
+* Password Hashing with Werkzeug
+* SQLite CRUD Operations
+* Search Functionality
+* Jinja2 Template Reusability
+* Dashboard Development
+* Responsive UI Design
+* Full Stack Application Development
 
 ---
 
@@ -110,24 +143,47 @@ Through this project, I learned:
 
 **Organization:** Maincrafts Technology
 
-**Task:** Task 2 – User Authentication System
+**Internship:** Python Full Stack Web Development
+
+**Task:** Task 3 – Database-Driven CRUD Application with Authentication
 
 **Duration:** 14 June 2026 – 14 July 2026
 
-## Screenshots
 
-### Registration Page
+# Application Preview
 
-![Register](screenshots/register.png)
+## Authentication
 
----
-
-### Login Page
+### Login
 
 ![Login](screenshots/login.png)
 
+### Registration
+
+![Registration](screenshots/register.png)
+
 ---
 
-### Dashboard Page
+## Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
+
+---
+
+## Student Management
+
+### Student Records
+
+![Students](screenshots/students.png)
+
+### Search Functionality
+
+![Search](screenshots/search.png)
+
+### Add Student
+
+![Add Student](screenshots/add-student.png)
+
+### Edit Student
+
+![Edit Student](screenshots/edit-student.png)
